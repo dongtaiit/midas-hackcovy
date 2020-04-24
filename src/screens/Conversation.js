@@ -20,10 +20,10 @@ const RANGE_TIME = 5 * 60 * 1001;
 const timestamp = 1586941500863;
 
 const dataChat = [
-  { me: false, text: "Chào bạn", timestamp },
+  { me: false, text: "Chào chị", timestamp },
   {
     me: false,
-    text: "Nay bé Linh được mấy điểm Toán vậy bạn?",
+    text: "Cháu An làm bài tập số 2 chưa vậy ạ?",
     timestamp: timestamp + 5000,
   },
   {
@@ -34,12 +34,12 @@ const dataChat = [
   {
     me: true,
     text:
-      "Từ lúc cho cháu đi học thêm mình thấy cháu có hứng thú học hẳn bạn ạ.",
+      "Cháu nó làm đúng không cô?",
     timestamp: timestamp + 1e6,
   },
   {
     me: false,
-    text: "Vậy à, bạn cho cháu học thêm ở đâu vậy?",
+    text: "Đúng chị ạ.",
     timestamp: timestamp + 1e6 + 1,
   },
 ];
@@ -119,6 +119,7 @@ class Conversation extends React.Component {
           key={item.timestamp}
           timestamp={item.timestamp}
           text={item.text}
+          image={key == 2 ? true : false}
           align={item.me ? "right" : "left"}
           backgroundColor={item.me ? "#dadada" : "#0A86F9"}
           colorText={item.me ? "#000" : "#fff"}
