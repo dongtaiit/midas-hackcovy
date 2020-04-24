@@ -1,0 +1,71 @@
+{
+  "project_info": {
+    "project_number": "144523860116",
+    "firebase_url": "https://campus-junior-8d4a6.firebaseio.com",
+    "project_id": "campus-junior-8d4a6",
+    "storage_bucket": "campus-junior-8d4a6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:144523860116:android:b26393911c6237b5c77c81",
+        "android_client_info": {
+          "package_name": "com.campusjunior"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "144523860116-fa7u8mf21g61lfkqgjr0g7jfr1sq65qh.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.campusjunior",
+            "certificate_hash": "d070bbbcb35b87cf8957699ab5231d28d71e39c7"
+          }
+        },
+        {
+          "client_id": "144523860116-e5p0dkido7sh7heb96naqhi14dik1ipi.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.campusjunior",
+            "certificate_hash": "e4e2e1152cbbb605ffc57a4ebec3034a182f5ca3"
+          }
+        },
+        {
+          "client_id": "144523860116-25kd3essb56k7iaboec7msqdjvsqe2j1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.campusjunior",
+            "certificate_hash": "8c58503d66353817d43ee4bc25ea8e392fdd20f5"
+          }
+        },
+        {
+          "client_id": "144523860116-01eefiqos8givfappnkoci8mpfri5dtr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDXjVNmg25RH8ZQqVlKwA393Xfr704Mqxc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "144523860116-t7fkrgnj8so77isfimhnk4u3a6kf01ts.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "144523860116-vv8b53rep2i03voeogcrp22hs0cave1p.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "org.kartalisge.phoneauth"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

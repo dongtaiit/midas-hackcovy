@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Campus Junior</string>
+    <string moduleConfig="true" name="CodePushDeploymentKey">deployment-key-here</string>
+    <string name="default_notification_channel_id">com.reactnativewithsendbird.default_channel_id</string>
+</resources>
