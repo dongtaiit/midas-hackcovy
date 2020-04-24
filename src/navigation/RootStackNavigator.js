@@ -5,9 +5,13 @@ const deviceWidth = Dimensions.get("window").width;
 import { transitionConfig } from "./DefaultTransitionConfig";
 import Login from "../screens/Login";
 import Conversation from '../screens/Conversation'
+import Notification from '../screens/Notification'
+
+
 
 let stack = {
   Login: { screen: Login },
+  Notification: { screen: Notification },
   Conversation: {
     screen: Conversation,
     navigationOptions: {

@@ -8,8 +8,6 @@ import { getStatusBarHeight } from 'react-native-iphone-x-helper';
 import {theme} from './src/config/theme';
 
 const STATUS_BAR_HEIGHT = getStatusBarHeight(true);
-
-
 export default class App extends Component {
   constructor(props) {
     super(props);
