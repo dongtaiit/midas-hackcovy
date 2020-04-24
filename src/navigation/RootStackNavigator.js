@@ -20,7 +20,7 @@ let stack = {
   },
 };
 export const RootStack = createStackNavigator(stack, {
-  initialRouteName: "Conversation",
+  initialRouteName: "Login",
   navigationOptions: ({ navigation }) => ({
     headerTitleStyle: { fontWeight: "400" },
   }),
