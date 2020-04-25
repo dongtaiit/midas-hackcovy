@@ -88,15 +88,15 @@ class SchedulesGrid extends PureComponent {
     _containerCalender() {
         return (
             <View style={{ width: 7 * deviceWidth / 8, flexDirection: 'row' }}>
-                {dataSchedule.map((it, index) => {
+                {dataSchedule.map((it, i) => {
                     return (
-                        <View style={{ width: deviceWidth / 8, flexDirection: 'column', flex: 1 }} key={index}>
+                        <View style={{ width: deviceWidth / 8, flexDirection: 'column', flex: 1 }} key={'schedule___' + i}>
                             {
                                 it.map((item, index) => {
                                     return (
                                         <TouchableOpacity activeOpacity={1} onPress={item.note ? this.toggleModal : null} key={'item___calendar' + index}>
                                             <View
-                                                style={styles.textItemCalendar}
+                                                style={((moment().day() === (i + 1)) && (this.state.count === 1) && index === 2) ? styles.textItemCalendarNow : styles.textItemCalendar}
                                             >
                                                 <View style={{ width: 10, height: 10, position: 'absolute' }}>
                                                     {item.note ? <Icon name='star' type='antdesign' color='#FACC2E' size={10} /> : null}
@@ -263,6 +263,13 @@ const styles = StyleSheet.create({
         width: deviceWidth / 8,
         borderColor: "#EAEAEA",
         borderWidth: 0.5,
+    },
+    textItemCalendarNow: {
+        height: 50,
+        width: deviceWidth / 8,
+        borderColor: "#EAEAEA",
+        borderWidth: 0.5,
+        backgroundColor: '#ED9035'
     },
     titleModal: {
         fontFamily: 'SF Compact Text',

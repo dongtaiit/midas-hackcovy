@@ -1,20 +1,20 @@
-import React, {PureComponent} from 'react';
-import {View, StyleSheet,Text } from 'react-native';
+import React, { PureComponent } from 'react';
+import { View, StyleSheet, Text } from 'react-native';
 import TopBar from '../common/TopBar';
 import Profile from '../Profile';
-import {  babies } from '../../mock_data/user';
+import { babies } from '../../mock_data/user';
 import { Bar } from '../../components'
 
 class TabProfile extends PureComponent {
   constructor(props) {
     super(props);
   }
-  
+
   render() {
     return (
       <View style={styles.container}>
-        <TopBar  {...this.props} left={()=> {}} leftCustormStyle={{ width : 10}} title="Thời gian biểu"/>
-        <Bar data={babies}/>
+        <TopBar  {...this.props} left={() => { }} leftCustormStyle={{ width: 10 }} title="Học sinh" />
+        <Bar data={babies} />
         <View style={styles.body}>
           <Profile />
         </View>
@@ -28,8 +28,8 @@ const styles = StyleSheet.create({
     flex: 1,
     position: 'relative'
   },
-  body:{
-    flex: 1, 
+  body: {
+    flex: 1,
   }
 });
 
