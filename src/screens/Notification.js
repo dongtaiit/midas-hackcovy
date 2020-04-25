@@ -125,7 +125,7 @@ const listData = [
   {
     messageId: "3",
     title: "Kéo dài thời gian nghỉ học cho Học sinh nhằm hạn chế tình trạng lây lan dịch viêm đường hô hấp cấp do chủng mới của vi rút Corona gây ra",
-    isRead: false,
+    isRead: true,
     timestamp: "1587787416",
     type: "NEWS",//NEWS,NOTIFICATION,SCHEDULE,
     imageUrl: "",
@@ -141,17 +141,19 @@ const listData = [
   {
     messageId: "3",
     title: "Kết quả học tập",
-    isRead: false,
+    isRead: true,
     timestamp: "1587787416",
     type: "NOTIFICATION",//NEWS,NOTIFICATION,SCHEDULE,
-    imageUrl: "",},
-    {
-      messageId: "3",
-      title: "Thông báo lịch học trực tuyến",
-      isRead: false,
-      timestamp: "1587787416",
-      type: "NOTIFICATION",//NEWS,NOTIFICATION,SCHEDULE,
-      imageUrl: "",}
+    imageUrl: "",
+  },
+  {
+    messageId: "3",
+    title: "Thông báo lịch học trực tuyến",
+    isRead: true,
+    timestamp: "1587787416",
+    type: "NOTIFICATION",//NEWS,NOTIFICATION,SCHEDULE,
+    imageUrl: "",
+  }
 ];
 const readedBody = (style, item) => {
   return (
@@ -231,9 +233,8 @@ class Notification extends Component {
       }}
     >
       <ListItem
-        opacity={!item.isRead ? 1 : 0.3}
         title={
-          readedTitle(!item.isRead ? cardStyles.name : { ...cardStyles.name, fontWeight: "" }, item)
+          readedTitle(!item.isRead ? cardStyles.name : { ...cardStyles.name }, item)
         }
         subtitle={
           <View style={cardStyles.container}>{
@@ -241,7 +242,7 @@ class Notification extends Component {
           </View>
         }
         leftAvatar={
-          <View style={{ height: 40, width: 40, borderRadius: 1000 ,backgroundColor:"gray"}} source={item.type == "NEWS" ? ICON_NEW : (item.type == "SCHEDULE" ? ICON_SCHEDULE : ICON_NOTIFI)} />
+          <View style={{ height: 40, width: 40, borderRadius: 1000, backgroundColor: "gray" }} source={item.type == "NEWS" ? ICON_NEW : (item.type == "SCHEDULE" ? ICON_SCHEDULE : ICON_NOTIFI)} />
         }
         bottomDivider
       />
@@ -310,7 +311,6 @@ const cardStyles = StyleSheet.create({
   name: {
     color: "#000",
     fontSize: 16,
-    fontWeight: "600",
     lineHeight: 16,
 
     fontWeight: "bold"
