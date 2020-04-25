@@ -87,9 +87,14 @@ class SchedulesList extends PureComponent {
     this.setState({ infoEventOfDay: null });
   };
 
-
   render() {
-    const { currentDay, pressDay, eventsDate, infoEventOfDay } = this.state;
+    const {
+      currentDay,
+      pressDay,
+      eventsDate,
+      infoEventOfDay,
+      currentTime,
+    } = this.state;
     let markedDate = {};
     eventsDate &&
       Object.keys(eventsDate).forEach((k) => {

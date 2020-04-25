@@ -1,21 +1,9 @@
 import React, { useState, useEffect } from "react";
-import {
-  View,
-  Text,
-  StyleSheet,
-  ScrollView,
-  Image,
-  FlatList,
-  Dimensions,
-} from "react-native";
-import LineEB from "./LineEB";
-import { TouchableOpacity } from "react-native-gesture-handler";
+import { View, Text, StyleSheet, ScrollView, Dimensions } from "react-native";
 import { Icon } from "react-native-elements";
 import Modal from "react-native-modal";
 import { Divider } from "react-native-elements";
-import { ListItem } from "react-native-elements";
-
-import { suggestGroups } from "../mock_data/social";
+import moment from "moment";
 
 const { width, height } = Dimensions.get("window");
 
@@ -32,6 +20,7 @@ const data = [
 const TimeLine = () => {
   const [visible, setVisible] = useState(false);
   const [dataModal, setDataModal] = useState(null);
+  const [currentTime, setCurrentTime] = useState(moment().format("HH:MM"));
 
   const _renderModal = () => {
     if (!dataModal) return <Text />;
@@ -106,17 +95,37 @@ const TimeLine = () => {
     setDataModal(item);
     setVisible(true);
   };
-
-  console.log("item", dataModal);
-
   return (
     <ScrollView>
-      {data.map((item) => {
+      {data.map((item = {}) => {
+        const [left, right] = item.left.split(" - ");
+        const flagNow = left <= currentTime && currentTime <= right;
+        const loadedFlag = left < currentTime;
+        console.log("flagNow", flagNow);
         return (
-          <View style={{ borderColor: "#ED9035", borderLeftWidth: 6 }}>
+          <View
+            style={{
+              borderColor: loadedFlag ? "#ED9035" : "#D8D8D8",
+              borderLeftWidth: 6,
+              position: "relative",
+            }}
+          >
             <View style={{ paddingLeft: 8 }}>
-              <Divider style={{ borderColor: "#f4f4f4", borderWidth: 0.5 }} />
+              <Divider style={{ borderColor: "#f4f4f4", borderWidth: 1 }} />
               <View style={lineStyles.container}>
+                {flagNow && (
+                  <Icon
+                    name="caretright"
+                    type="antdesign"
+                    color="#ED9035"
+                    containerStyle={{
+                      position: "absolute",
+                      left: -16,
+                      top: 8,
+                    }}
+                    size={18}
+                  />
+                )}
                 <Text style={lineStyles.left}>{item.left}</Text>
                 <View style={lineStyles.box}>
                   <Text style={lineStyles.center}>{item.center}</Text>
@@ -128,7 +137,6 @@ const TimeLine = () => {
                   </Text>
                 </View>
               </View>
-              <Divider style={{ borderColor: "#f4f4f4", borderWidth: 0.25 }} />
             </View>
           </View>
         );
