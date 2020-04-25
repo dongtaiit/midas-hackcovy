@@ -22,12 +22,7 @@ let stack = {
       header: null,
     },
   },
-  Conversation: {
-    screen: Conversation,
-    navigationOptions: {
-      header: null,
-    },
-  },
+  Conversation: { screen: Conversation },
 };
 export const RootStack = createStackNavigator(stack, {
   initialRouteName: "Login",

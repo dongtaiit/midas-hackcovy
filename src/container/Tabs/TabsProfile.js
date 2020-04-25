@@ -3,7 +3,7 @@ import { View, StyleSheet, Text } from 'react-native';
 import TopBar from '../common/TopBar';
 import Profile from '../Profile';
 import { babies } from '../../mock_data/user';
-import { Bar } from '../../components'
+import { Bar } from '../../components';
 
 class TabProfile extends PureComponent {
   constructor(props) {
@@ -13,7 +13,7 @@ class TabProfile extends PureComponent {
   render() {
     return (
       <View style={styles.container}>
-        <TopBar  {...this.props} left={() => { }} leftCustormStyle={{ width: 10 }} title="Học sinh" />
+        <TopBar  {...this.props}  title="Học sinh" />
         <Bar data={babies} />
         <View style={styles.body}>
           <Profile />

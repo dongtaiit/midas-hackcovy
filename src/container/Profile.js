@@ -3,6 +3,8 @@ import React, { Component } from 'react';
 import PagerTabIndicator from '../components/indicator/PagerTabIndicator';
 import IndicatorViewPager from '../components/IndicatorViewPager';
 import Schedules from "./profile/Schedules";
+import Academy from "./profile/Academy";
+import PersonalFile from "./profile/PersonalFile";
 
 export default class Profile extends Component {
     render() {
@@ -16,10 +18,10 @@ export default class Profile extends Component {
                         <Schedules />
                     </View>
                     <View>
-                        <View><Text>Tabs Academy</Text></View>
+                        <Academy />
                     </View>
                     <View>
-                        <View><Text>Tabs profile</Text></View>
+                        <PersonalFile />
                     </View>
                 </IndicatorViewPager>
             </View>

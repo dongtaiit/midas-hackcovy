@@ -255,7 +255,7 @@ class Login extends Component {
               <Image style={{ width: 150, height: 150, borderRadius: 1000 }} source={require('../assets/images/logo.png')} />
             </TouchableOpacity>
             <View style={{ marginTop: 20, alignItems: 'center' }}>
-              <Text style={styles.logoTextTitle}>{I18n.t('COMMON.SubText1')}</Text>
+              {/* <Text style={styles.logoTextTitle}>{I18n.t('COMMON.SubText1')}</Text> */}
               <Text style={styles.logoTextTitle}>{I18n.t('COMMON.SubText2')}</Text>
             </View>
             <Text style={styles.logoTextSubTitle}>{I18n.t('COMMON.subLogoText')}</Text>

@@ -3,9 +3,9 @@ export default {
     "selectSever": "Vui lòng chọn server",
     "serverDevelop": " Server Develop",
     "serverStaging" : " Server Staging",
-    "SubText1" : "Uỷ ban nhân dân Tỉnh Nghệ An",
-    "SubText2" : "Sở Giáo Dục và Đào Tạo tỉnh Nghệ An",
-    "subLogoText" : "SỔ LIÊN LẠC 4.0"
+    "SubText1" : "Uỷ ban nhân dân Thành phố Hà Nội",
+    "SubText2" : "Sở Giáo Dục và Đào Tạo thành phố Hà Nội",
+    "subLogoText" : "SỔ LIÊN LẠC ĐIỆN TỬ"
   },
   "MENU" :{
     "tittle" : "Diễn Đàn",
