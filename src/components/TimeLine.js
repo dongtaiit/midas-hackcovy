@@ -81,8 +81,10 @@ const TimeLine = () => {
               />
             </View>
           </View>
-          <Divider style={{ margin: 12, borderColor: "#E4E4E4" }} />
-          <View style={{ flexDirection: "row" }}>
+          <Divider
+            style={{ marginTop: 12, marginBottom: 12, borderColor: "#E4E4E4" }}
+          />
+          <View style={{ flexDirection: "row", marginBottom: 30 }}>
             <Text style={modalStyles.contentLeft}>Link học online:</Text>
             <Text style={modalStyles.link}>www.zoommeting.vn</Text>
           </View>
@@ -101,7 +103,6 @@ const TimeLine = () => {
         const [left, right] = item.left.split(" - ");
         const flagNow = left <= currentTime && currentTime <= right;
         const loadedFlag = left < currentTime;
-        console.log("flagNow", flagNow);
         return (
           <View
             style={{
@@ -215,6 +216,7 @@ const modalStyles = StyleSheet.create({
   },
   link: {
     color: "blue",
+    lineHeight: 16,
   },
 });
 

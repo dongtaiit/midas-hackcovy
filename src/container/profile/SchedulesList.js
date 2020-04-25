@@ -103,10 +103,6 @@ class SchedulesList extends PureComponent {
     return (
       <ScrollView>
         <Calendar
-          markedDates={{
-            ...markedDate,
-            [currentDay]: { selected: true },
-          }}
           onDayPress={({ dateString }) => this._showInfoEvent(dateString)}
           hideExtraDays={false}
           onMonthChange={() => this._onMonthChange()}
@@ -143,8 +139,7 @@ class SchedulesList extends PureComponent {
             },
           }}
         />
-        {/* {infoEventOfDay && this._renderBoard(infoEventOfDay)} */}
-        {infoEventOfDay && <TimeLine />}
+        <TimeLine />
       </ScrollView>
     );
   }
