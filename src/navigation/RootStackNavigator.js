@@ -7,6 +7,7 @@ import Login from "../screens/Login";
 import Conversation from '../screens/Conversation'
 import Notification from '../screens/Notification'
 import DetailNews from '../screens/DetailNews'
+import DetailNotification from '../screens/DetailNotification'
 import Home from "../screens/Home";
 
 
@@ -14,6 +15,7 @@ let stack = {
   Login: { screen: Login },
   Notification: { screen: Notification },
   DetailNews: { screen: DetailNews },
+  DetailNotification: { screen: DetailNotification },
   Home: {
     screen: Home,
     navigationOptions: {

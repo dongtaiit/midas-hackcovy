@@ -1,11 +1,9 @@
 import React from "react";
-import { Text, View, Image, StyleSheet, ScrollView } from "react-native";
+import { Text, View, Image, StyleSheet, ScrollView, TouchableOpacity } from "react-native";
 import TopBar from "../container/common/TopBar";
 import Button from "../components/Button";
-import iconBack from "../assets/images/backArrow.png";
-import TopBarTitle from "../components/TopBarTitle";
 import { Icon } from "react-native-elements";
-
+import TopBarTitle from "../components/TopBarTitle";
 const checkin = [
   { left: "Tiết 1 (Môn toán học): ", right: "có mặt đầy đủ" },
   { left: "Tiết 2 (Môn sinh học): ", right: "có mặt đầy đủ" },
@@ -18,21 +16,28 @@ const pointDay = [
   { left: "Môn toán học: ", right: "8đ (miệng)" },
   { left: "Môn sinh học: ", right: "8đ (15 phút)" }
 ];
+_render = list => {
+  return list.map(v => {
+    return (
+      <View style={{ flexDirection: "row" }} key={v.right}>
+        <Text style={styles.left}>{v.left}</Text>
+        <Text style={styles.right}>{v.right}</Text>
+      </View>
+    );
+  });
+};
+class DetailNotification extends React.Component {
+  constructor(props) {
+    super(props);
+    const item = this.props.navigation.getParam('item', {});
+    item.name="Nguyễn Thu Trang"
+    this.state = { item }
+  }
+  render() {
+    let item = this.state.item
 
-const DetailNotification = ({ navigation }) => {
-  let item = navigation.getParam("item", {});
-  _render = list => {
-    return list.map(v => {
-      return (
-        <View style={{ flexDirection: "row" }} key={v.right}>
-          <Text style={styles.left}>{v.left}</Text>
-          <Text style={styles.right}>{v.right}</Text>
-        </View>
-      );
-    });
-  };
-  return (
-    <ScrollView
+    return (
+      <ScrollView
       style={{ paddingLeft: 10, paddingRight: 10, paddingBottom: 20 }}
     >
       <Text style={styles.header}>
@@ -59,9 +64,10 @@ const DetailNotification = ({ navigation }) => {
         trong lớp và bị giáo viên bộ môn ghi sổ đầu bài.”
       </Text>
     </ScrollView>
-  );
-};
 
+    );
+  }
+}
 DetailNotification.navigationOptions = ({ navigation }) => {
   let item = navigation.getParam("item", {});
   return {
@@ -87,6 +93,7 @@ DetailNotification.navigationOptions = ({ navigation }) => {
     )
   };
 };
+
 
 const styles = StyleSheet.create({
   header: {
@@ -119,5 +126,4 @@ const styles = StyleSheet.create({
     color: "#000"
   }
 });
-
 export default DetailNotification;

@@ -23,9 +23,10 @@ class DetailNews extends React.Component {
           <Text style={styles.header}>
             {item.title + ""}
           </Text>
-          <Image style={{ height: 200, marginTop: 16, marginBottom: 8 }} source={{ uri: item.imageUrl }} />
+          
           <Text style={styles.text}>
             {item.body}        </Text>
+            <Image style={{ height: 200, marginTop: 16, marginBottom: 8}} source={{ uri: item.imageUrl }} />
         </View>
 
 

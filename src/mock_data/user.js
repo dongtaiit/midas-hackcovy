@@ -15,7 +15,7 @@ export const babies = [
     name: "Đặng Hồng Quang",
   },
   {
-    name: "Nguyễn Thị Thu Thảo",
+    name: "Nguyễn Thu Trang",
   },
 ];
 export const group = [
@@ -216,7 +216,7 @@ export const childrensInfo = [
       born: 1970,
     },
     motherInfo: {
-      name: "Nguyễn Thị Thảo",
+      name: "Nguyễn Thu Trang",
       born: 1974,
     },
   },
