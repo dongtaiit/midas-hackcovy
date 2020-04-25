@@ -87,6 +87,7 @@ class SchedulesList extends PureComponent {
     this.setState({ infoEventOfDay: null });
   };
 
+
   render() {
     const { currentDay, pressDay, eventsDate, infoEventOfDay } = this.state;
     let markedDate = {};
@@ -139,7 +140,6 @@ class SchedulesList extends PureComponent {
         />
         {/* {infoEventOfDay && this._renderBoard(infoEventOfDay)} */}
         {infoEventOfDay && <TimeLine />}
-
       </ScrollView>
     );
   }

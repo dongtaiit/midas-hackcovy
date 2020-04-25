@@ -1,6 +1,23 @@
-import React from "react";
-import { View, Text, StyleSheet, ScrollView } from "react-native";
+import React, { useState, useEffect } from "react";
+import {
+  View,
+  Text,
+  StyleSheet,
+  ScrollView,
+  Image,
+  FlatList,
+  Dimensions,
+} from "react-native";
 import LineEB from "./LineEB";
+import { TouchableOpacity } from "react-native-gesture-handler";
+import { Icon } from "react-native-elements";
+import Modal from "react-native-modal";
+import { Divider } from "react-native-elements";
+import { ListItem } from "react-native-elements";
+
+import { suggestGroups } from "../mock_data/social";
+
+const { width, height } = Dimensions.get("window");
 
 const data = [
   { left: "08:00 - 10:00", center: "Toán học", right: "Xem chi tiết" },
@@ -12,37 +29,121 @@ const data = [
   { left: "20:00 - 21:00", center: "Lịch sử", right: "Xem chi tiết" },
 ];
 
-function TimeLine() {
+const TimeLine = () => {
+  const [visible, setVisible] = useState(false);
+  const [dataModal, setDataModal] = useState(null);
+
+  const _renderModal = () => {
+    if (!dataModal) return <Text />;
+    return (
+      <Modal isVisible={visible} style={modalStyles.container}>
+        <Icon
+          containerStyle={{
+            position: "absolute",
+            right: 16,
+            top: 16,
+            zIndex: 1000,
+            flex: 1,
+          }}
+          name="close"
+          type="EvilIcons"
+          size={36}
+          onPress={() => setVisible(false)}
+        />
+        <View style={modalStyles.body}>
+          <Text style={modalStyles.time}>{dataModal.left}</Text>
+          <Text style={modalStyles.subject}>{dataModal.center}</Text>
+          <View style={{ flexDirection: "row" }}>
+            <Text style={modalStyles.contentLeft}>Nội dung:</Text>
+            <Text style={{ ...modalStyles.contentRight, marginRight: 30 }}>
+              Viết bài văn mô tả về con vật mà em yêu thích nhất, luyện viết
+              chính tả
+            </Text>
+          </View>
+          <Divider
+            style={{ marginTop: 12, marginBottom: 12, borderColor: "#E4E4E4" }}
+          />
+          <View style={{ flexDirection: "row" }}>
+            <Text style={modalStyles.contentLeft}>Giáo viên phụ trách:</Text>
+            <Text style={modalStyles.contentRight}>Hoàng Văn Trung</Text>
+          </View>
+          <View
+            style={{ flexDirection: "row", justifyContent: "space-between" }}
+          >
+            <View style={{ flexDirection: "row" }}>
+              <Text style={modalStyles.contentLeft}>Số điện thoại</Text>
+              <Text style={modalStyles.contentRight}>0988 888 6789</Text>
+            </View>
+            <View style={{ flexDirection: "row" }}>
+              <Icon
+                containerStyle={{ marginRight: 10 }}
+                name="phone-call"
+                type="feather"
+                color="#A4A4A4"
+                size={20}
+                onPress={() => setVisible(false)}
+              />
+              <Icon
+                name="message-text-outline"
+                type="material-community"
+                color="#A4A4A4"
+                size={20}
+                onPress={() => setVisible(false)}
+              />
+            </View>
+          </View>
+          <Divider style={{ margin: 12, borderColor: "#E4E4E4" }} />
+          <View style={{ flexDirection: "row" }}>
+            <Text style={modalStyles.contentLeft}>Link học online:</Text>
+            <Text style={modalStyles.link}>www.zoommeting.vn</Text>
+          </View>
+        </View>
+      </Modal>
+    );
+  };
+
+  const _showModal = (item) => {
+    setDataModal(item);
+    setVisible(true);
+  };
+
+  console.log("item", dataModal);
+
   return (
     <ScrollView>
-      {data.map((item) => (
-        <Line item={item} key={item.left} />
-      ))}
+      {data.map((item) => {
+        return (
+          <View style={{ borderColor: "#ED9035", borderLeftWidth: 6 }}>
+            <View style={{ paddingLeft: 8 }}>
+              <Divider style={{ borderColor: "#f4f4f4", borderWidth: 0.5 }} />
+              <View style={lineStyles.container}>
+                <Text style={lineStyles.left}>{item.left}</Text>
+                <View style={lineStyles.box}>
+                  <Text style={lineStyles.center}>{item.center}</Text>
+                  <Text
+                    onPress={() => _showModal(item)}
+                    style={lineStyles.right}
+                  >
+                    {item.right}
+                  </Text>
+                </View>
+              </View>
+              <Divider style={{ borderColor: "#f4f4f4", borderWidth: 0.25 }} />
+            </View>
+          </View>
+        );
+      })}
+      {_renderModal()}
     </ScrollView>
   );
-}
-
-function Line({ item }) {
-  return (
-    <>
-      <LineEB style={{ borderColor: "#F4F4F4" }} />
-      <View style={lineStyles.container}>
-        <Text style={lineStyles.left}>{item.left}</Text>
-        <View style={lineStyles.box}>
-          <Text style={lineStyles.center}>{item.center}</Text>
-          <Text style={lineStyles.right}>{item.right}</Text>
-        </View>
-      </View>
-      <LineEB style={{ borderColor: "#F4F4F4" }} />
-    </>
-  );
-}
+};
 
 const lineStyles = StyleSheet.create({
   container: {
     flexDirection: "row",
     flex: 1,
     padding: 10,
+    fontFamily: "Roboto",
   },
   box: {
     flex: 1,
@@ -67,6 +168,45 @@ const lineStyles = StyleSheet.create({
     fontSize: 12,
     fontWeight: "bold",
     marginLeft: 8,
+  },
+});
+
+const modalStyles = StyleSheet.create({
+  container: {
+    margin: 0,
+    padding: 0,
+    position: "absolute",
+    bottom: 0,
+    backgroundColor: "#fff",
+    borderTopLeftRadius: 20,
+    borderTopRightRadius: 20,
+    width,
+    height: height / 3,
+  },
+  body: {
+    padding: 20,
+    paddingTop: 60,
+  },
+  time: {
+    color: "#0B6DB8",
+  },
+  subject: {
+    color: "#000",
+    fontWeight: "800",
+    fontSize: 17,
+    paddingBottom: 11,
+  },
+  contentLeft: {
+    lineHeight: 16,
+    color: "#888",
+    marginRight: 8,
+  },
+  contentRight: {
+    color: "#000",
+    lineHeight: 16,
+  },
+  link: {
+    color: "blue",
   },
 });
 
