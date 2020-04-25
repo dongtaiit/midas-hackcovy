@@ -1,8 +1,8 @@
 import React from "react";
-import { View } from "react-native";
+import { View,Text } from "react-native";
 
 function TabsProfile() {
-  return <View>tabs profile</View>;
+  return <View><Text>tabs profile</Text></View>;
 }
 
 export default TabsProfile;

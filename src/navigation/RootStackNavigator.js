@@ -6,12 +6,18 @@ import { transitionConfig } from "./DefaultTransitionConfig";
 import Login from "../screens/Login";
 import Conversation from '../screens/Conversation'
 import Notification from '../screens/Notification'
-
+import Home from "../screens/Home";
 
 
 let stack = {
   Login: { screen: Login },
   Notification: { screen: Notification },
+  Home: {
+    screen: Home,
+    navigationOptions: {
+      header: null,
+    },
+  },
   Conversation: {
     screen: Conversation,
     navigationOptions: {

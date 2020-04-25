@@ -1,10 +1,10 @@
 import React from 'react';
-import { View } from "react-native";
+import { View ,Text} from "react-native";
 
 function TabsChat() {
     return (
         <View>
-            tabsChat  
+            <Text>tabsChat</Text>
         </View>
     )
 }

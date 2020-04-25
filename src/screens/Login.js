@@ -50,7 +50,7 @@ class Login extends Component {
     const authen = Authen.getInstance();
     if (authen.isLogined) {
       this._hideLoading()
-      this.redirectTo('Conversation');
+      this.redirectTo('Home');
     }
     if (authen.isLogout && !!authen.touchID) {
       this._touchIdHandler()
@@ -130,7 +130,7 @@ class Login extends Component {
     let { user, error } = this.props;
     if (user && user !== prevProps.user) {
       this._hideLoading()
-      this.redirectTo('Conversation');
+      this.redirectTo('Home');
     }
     if (error && error !== prevProps.error) {
       this.setState({ isLoading: false });

@@ -1,8 +1,8 @@
 import React from "react";
-import { View } from "react-native";
+import { View ,Text} from "react-native";
 
 function TabsNews() {
-  return <View>tabs news</View>;
+  return <View><Text> tabs news</Text></View>;
 }
 
 export default TabsNews;
