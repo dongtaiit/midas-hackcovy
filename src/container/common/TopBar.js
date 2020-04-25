@@ -94,11 +94,11 @@ class TopBar extends PureComponent {
   }
 
   render() {
-    let { left, center, right} = this.props;
+    let { left, center, right,leftCustormStyle} = this.props;
     return (
       <View style={{justifyContent: 'center'}}>
         <View style={[styles.container, this.props.customStyle]}>
-          <View style={{width: 56}}>
+          <View style={[{width: 56},leftCustormStyle]}>
             {left ? left() : this.renderLeftButton()}
           </View>
           <View style={{flex: 1}}>
