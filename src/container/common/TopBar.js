@@ -41,7 +41,8 @@ class TopBar extends PureComponent {
   }
 
   handlePressRightButton() {
-    this.props.navigation.navigate('Nofification')
+    console.log("Notification screen")
+    this.props.navigation.navigate('Notification')
   }
 
   renderRightButton() {
