@@ -18,9 +18,9 @@ const formatTime = ({ timestamp }) => {
   const formattedDT = moment.tz(timestamp, 'America/Los_Angeles').format('YYYY-MM-DD HH:mm ZZ');
   return formattedDT;
 };
-const ICON_NEW = require("../assets/images/icon_news.png");
-const ICON_NOTIFI = require("../assets/images/icon_noti.png");
-const ICON_SCHEDULE = require("../assets/images/icon_schedule.png");
+const ICON_NEW = require("../assets/images/newss.jpg");
+const ICON_NOTIFI = require("../assets/images/notify.png");
+const ICON_SCHEDULE = require("../assets/images/schedule.png");
 const listData = [
   {
     messageId: "1",
@@ -198,7 +198,7 @@ class Notification extends Component {
               />
             </Button>
           )}
-          center={() => <TopBarTitle text="Thông báo mới" align="left" />}
+          center={() => <TopBarTitle text={"Thông báo mới"} align="left" />}
         />
       )
     };
@@ -243,7 +243,9 @@ class Notification extends Component {
           </View>
         }
         leftAvatar={
-          <View style={{ height: 40, width: 40, borderRadius: 1000, backgroundColor: "gray" }} source={item.type == "NEWS" ? ICON_NEW : (item.type == "SCHEDULE" ? ICON_SCHEDULE : ICON_NOTIFI)} />
+          <View>
+            <Image  style={{ height: 40, width: 40, borderRadius: 1000,marginBottom: 10 }} source={item.type == "NEWS" ? ICON_NEW : (item.type == "SCHEDULE" ? ICON_SCHEDULE : ICON_NOTIFI)} />
+          </View>
         }
         bottomDivider
       />

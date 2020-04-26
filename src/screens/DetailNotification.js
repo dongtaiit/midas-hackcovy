@@ -88,7 +88,7 @@ DetailNotification.navigationOptions = ({ navigation }) => {
             />
           </Button>
         )}
-        center={() => <TopBarTitle text={item.name} align="left" />}
+        center={() => <TopBarTitle text={"Thông báo mới"} align="left" />}
       />
     )
   };

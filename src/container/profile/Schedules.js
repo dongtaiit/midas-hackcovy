@@ -14,9 +14,9 @@ export default class Schedules extends Component {
         super(props);
         this.state = {
             deviceWidth,
-            count: 1, // counter: click next/ previous of week.
+            count: 0, // counter: click next/ previous of week.
             content: '',
-            layout: false
+            layout: true
         };
     }
 

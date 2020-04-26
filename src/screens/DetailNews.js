@@ -6,6 +6,8 @@ import { Icon } from "react-native-elements";
 import LineEB from '../components/LineEB';
 import WallpaperHorizontal from '../components/WallpaperHorizontal';
 import { theme } from "../config/theme";
+import TopBarTitle from "../components/TopBarTitle";
+
 class DetailNews extends React.Component {
   constructor(props) {
     super(props);
@@ -53,9 +55,7 @@ DetailNews.navigationOptions = ({ navigation }) => {
             />
           </Button>
         )}
-        center={() => { }
-
-        }
+        center={() => <TopBarTitle text={"Tin tức mới"} align="left" />}
         right={() => {
         }}
       />

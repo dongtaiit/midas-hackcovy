@@ -24,7 +24,7 @@ class SchedulesGrid extends PureComponent {
         super(props);
         this.state = {
             deviceWidth,
-            count: 1, // counter: click next/ previous of week.
+            count: 0, // counter: click next/ previous of week.
             isModalVisible: false,
             content: '',
             layout: false
@@ -96,7 +96,7 @@ class SchedulesGrid extends PureComponent {
                                     return (
                                         <TouchableOpacity activeOpacity={1} onPress={item.note ? this.toggleModal : null} key={'item___calendar' + index}>
                                             <View
-                                                style={((moment().day() === (i + 1)) && (this.state.count === 1) && index === 2) ? styles.textItemCalendarNow : styles.textItemCalendar}
+                                                style={((moment().day() === i) && (this.state.count === 0) && index === 2) ? styles.textItemCalendarNow : (item.subject ?  styles.textItemCalendar : styles.textItemCalendarNo)}
                                             >
                                                 <View style={{ width: 10, height: 10, position: 'absolute' }}>
                                                     {item.note ? <Icon name='star' type='antdesign' color='#FACC2E' size={10} /> : null}
@@ -264,12 +264,19 @@ const styles = StyleSheet.create({
         borderColor: "#EAEAEA",
         borderWidth: 0.5,
     },
+    textItemCalendarNo: {
+        height: 50,
+        width: deviceWidth / 8,
+        borderColor: "#EAEAEA",
+        borderWidth: 0.5,
+        backgroundColor:'#F3F3F3'
+    },
     textItemCalendarNow: {
         height: 50,
         width: deviceWidth / 8,
         borderColor: "#EAEAEA",
         borderWidth: 0.5,
-        backgroundColor: '#ED9035'
+        backgroundColor: '#FCD447'
     },
     titleModal: {
         fontFamily: 'SF Compact Text',
