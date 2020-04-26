@@ -54,7 +54,7 @@ const TimeLine = () => {
           />
           <View style={{ flexDirection: "row" }}>
             <Text style={modalStyles.contentLeft}>Giáo viên phụ trách:</Text>
-            <Text style={modalStyles.contentRight}>Hoàng Văn Trung</Text>
+            <Text style={modalStyles.contentRight}>Đặng Hồng Quang</Text>
           </View>
           <View
             style={{ flexDirection: "row", justifyContent: "space-between" }}

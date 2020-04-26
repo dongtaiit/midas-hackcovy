@@ -4,11 +4,6 @@ import Authen from '../api/authen';
 export const userConnect = (userPhone, userPassword) => {
   return new Promise((resolve, reject) => {
     userPhone = userPhone.replace(/[\W_]+/g, ' ');
-    var rex = /(849||841[2|6|8|9]||09||01[2|6|8|9])+([0-9]{8})\b/g
-    if (!rex.test(userPhone)) {
-      reject("Số điện thoại không hợp lệ");
-      return;
-    }
     if (!userPhone) {
       reject("Vui lòng nhập số điện thoại");
       return;
