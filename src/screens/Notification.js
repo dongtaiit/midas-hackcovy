@@ -197,7 +197,7 @@ class Notification extends Component {
               />
             </Button>
           )}
-          center={() => <TopBarTitle text="Thông báo mới" align="left" />}
+          center={() => <TopBarTitle text={"Thông báo mới"} align="left" />}
         />
       )
     };
