@@ -111,8 +111,9 @@ const styles = StyleSheet.create({
     },
     textSelected: {
         fontSize: 14,
-        color: theme.mainTextColor,
+       // color: theme.mainTextColor,
         lineHeight: 16,
         fontWeight: 'bold',
+        color:'#FCD447'
     }
 })

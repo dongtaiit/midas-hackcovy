@@ -159,14 +159,14 @@ export const POINTS = [
       { subject : '',note : null },
       { subject : '',note : null }
     ],
-    [ { subject : '',note : null },
+    [ { subject : 'Văn học',note : null },
       { subject : '',note : null },
       { subject : '',note : null },
       { subject : '',note : null },
       { subject : '',note : null },
       { subject : '',note : null }
     ],
-    [ { subject : '',note : null },
+    [ { subject : 'Văn học',note : null },
       { subject : '',note : null },
       { subject : '',note : null },
       { subject : '',note : null },
