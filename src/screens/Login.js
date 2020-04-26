@@ -252,7 +252,11 @@ class Login extends Component {
           <Spinner visible={this.state.isLoading} />
           <View style={styles.logoViewStyle}>
             <TouchableOpacity activeOpacity={1} >
-              <Image style={{ width: 150, height: 150, borderRadius: 1000 }} source={require('../assets/images/logo.png')} />
+              <View style={{ backgroundColor: '#FFF',width: 150, height: 150, borderRadius: 1000 ,alignItems:'center',justifyContent:'center'}}>
+                <Text style={{fontSize: 36,fontWeight:'700',color: '#000'}}>Midas</Text>
+              </View>
+              
+              {/* <Image style={{ width: 150, height: 150, borderRadius: 1000 }} source={require('../assets/images/logo2.png')} /> */}
             </TouchableOpacity>
             <View style={{ marginTop: 20, alignItems: 'center' }}>
               {/* <Text style={styles.logoTextTitle}>{I18n.t('COMMON.SubText1')}</Text> */}
