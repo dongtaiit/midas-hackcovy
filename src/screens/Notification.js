@@ -41,7 +41,8 @@ const listData = [
     
     Khuyến cáo chung với người dân:
     
-    Tránh đi lại, du lịch nếu đang có các triệu chứng sốt, ho hoặc khó thở. Đến ngay cơ sở y tế khi có triệu chứng nghi ngờ, đồng thời chia sẻ lịch trình đã di chuyển với nhân viên y tế.
+    
+    i ngờ, đồng thời chia sẻ lịch trình đã di chuyển với nhân viên y tế.
     Tránh tiếp xúc với người bị sốt, ho. Thường xuyên rửa tay bằng xà phòng, tránh chạm vào mắt, mũi, miệng.
     Khi ho, hắt hơi, hãy che kín miệng và bịt mũi bằng khăn giấy. Sau sử dụng khăn giấy, hãy bỏ vào thùng rác và vệ sinh tay sạch sẽ.
     Nếu nghi ngờ có dấu hiệu nhiễm bệnh khi đi lại, du lịch cần thông báo ngay cho nhân viên hàng không, đường sắt, ô tô và tìm đến cơ sở y tế càng sớm càng tốt.

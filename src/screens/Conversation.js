@@ -34,7 +34,7 @@ const dataChat = [
   {
     me: true,
     text:
-      "Cháu nó làm đúng không cô?",
+      "Cháu làm đúng không cô?",
     timestamp: timestamp + 1e6,
   },
   {

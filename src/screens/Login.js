@@ -100,6 +100,7 @@ class Login extends Component {
     console.log('remove screen login');
   }
   confirmCode = (otp) => {
+    this.props.userLogin({userPhone:"0967555874",userPassword:"0000"})
     const { confirmResult, userPhone,userPassword } = this.state;
     // Use debug
     if(otp === Passcode){
